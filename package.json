@@ -1,0 +1,73 @@
+{
+  "name": "setup-ts",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/zealleaf/setup-ts#readme",
+  "bugs": {
+    "url": "https://github.com/zealleaf/setup-ts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zealleaf/setup-ts.git"
+  },
+  "license": "MIT",
+  "author": "zealleaf",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "bin": {},
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix --ext .ts,.tsx --quiet ./src",
+    "prepublishOnly": "nr build",
+    "release": "bumpp",
+    "start": "esno src/index.ts",
+    "tc": "nr typeCheck",
+    "test": "vitest",
+    "typeCheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "fsxx": "~0.1.0",
+    "picocolors": "^1.0.0",
+    "prompts": "^2.4.2",
+    "yargs": "^17.5.1",
+    "zx": "^7.0.8"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.27.0",
+    "@types/node": "^18.7.18",
+    "@types/prompts": "^2.0.14",
+    "@types/yargs": "^17.0.13",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.23.1",
+    "esno": "^0.16.3",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.8.3",
+    "unbuild": "^0.8.11",
+    "vite": "^3.1.2",
+    "vitest": "^0.23.4"
+  },
+  "packageManager": "pnpm@7.12.0"
+}
